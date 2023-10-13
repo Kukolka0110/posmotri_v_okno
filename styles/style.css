@@ -113,8 +113,8 @@ ol {
   appearance: none;
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
-  border-right: 0;
-  border-left: 0;
+  border-right: none;
+  border-left: none;
 
 }
 .search-form__textfield:focus {
@@ -144,7 +144,7 @@ ol {
   border: 1px solid #fff;
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:active, .search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
   content: "";
   min-inline-size: 15px;
   min-block-size: 15px;
@@ -161,7 +161,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 }
 
 .search-form__label:hover .search-form__label-text {
-  text-decoration: none;
+  text-decoration: underline;
   text-underline-position: under;
   
 }
@@ -175,7 +175,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   line-height: normal;
   display: flex;
   min-width: 194px;
-  height: 34px;
+  min-height: 34px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -189,7 +189,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   background-color: rgba(84, 80, 80, 1);
 }
 .button:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .button:focus {
   outline: none;
@@ -202,7 +202,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 26px;
+  gap: 21px;
   padding-left: 30px;
   margin-top: auto;
 }
@@ -231,38 +231,52 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   min-width: 394px;
   flex-shrink: 0;
 }
+
 .content__card-link {
   display: block;
   margin: 2px;
   text-decoration: none;
   color: #fff;
 }
+
 .content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
+
 .content__card-link:hover {
-  text-decoration: none;
-  text-underline-position: none;
+  text-decoration: underline;
+  text-underline-position: under;
 }
+
 .content__card-link:focus {
   outline: none;
 }
+
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
+
 .content__card-link_current {
   background: #545050;
 }
+
 .content__video-card {
   display: grid;
   grid-template-columns: 1fr auto;
   max-width: 394px;
 }
+
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-inline-size: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
+
 .content__video-card-title {
   color: #fff;
   font-family: "Oswald", sans-serif;
@@ -273,6 +287,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   text-transform: uppercase;
   text-decoration: none;
 }
+
 .content__video-card-description {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -295,3 +310,4 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
   min-height: 34px;
   gap: 10px;
 }
+
