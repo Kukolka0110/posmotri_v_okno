@@ -16,6 +16,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -39,12 +42,10 @@ ol {
 
 .content {
   width: 1140px;
-  min-height: 100vh;
   display: grid;
   grid-template-columns: 711px auto;
   align-content: center;
   align-items: end;
-  margin: auto;
 
 }
 .result {
@@ -97,6 +98,12 @@ ol {
 }
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
+  text-decoration: underline;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+.search-form__label:active {
+  text-decoration: none;
 }
 
 .search-form__textfield {
@@ -119,6 +126,7 @@ ol {
 }
 .search-form__textfield:focus {
   outline: none;
+  
 }
 .search-form__checkbox-list {
   display: flex;
@@ -144,11 +152,13 @@ ol {
   border: 1px solid #fff;
 }
 
-.search-form__checkbox:active, .search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
+.search-form__checkbox:active + .search-form__pseudo-checkbox::before , 
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
   min-inline-size: 15px;
   min-block-size: 15px;
   background: #fff;
+  text-decoration: none;
 }
 
 .search-form__label-text {
@@ -160,11 +170,11 @@ ol {
   line-height: normal;
 }
 
-.search-form__label:hover {
+.search-form__label:hover  { 
   text-decoration: underline;
-  text-underline-position: under;
-  
-}
+  text-underline-position: under; 
+} 
+
 .button {
   cursor: pointer;
   text-align: center;
@@ -227,7 +237,7 @@ ol {
 
 .content__list {
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 298px;
   
 }
@@ -236,7 +246,6 @@ ol {
 }
 .content__list-item {
   display: grid;
-  min-width: 394px;
   flex-shrink: 0;
   
 }
