@@ -97,10 +97,8 @@ ol {
   cursor: pointer;
 }
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
-  text-decoration: underline;
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
 }
 .search-form__label:active {
   text-decoration: none;
@@ -210,10 +208,13 @@ ol {
 
 .button:focus {
   outline: none;
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
  
 }
 .button:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, 1);
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
   
 }
 
@@ -331,8 +332,8 @@ ol {
   flex-shrink: 0;
 }
 .more-button {
-  width: 100%;
+  width: calc(100% - 4px);
   min-height: 34px;
-  gap: 10px;
+  margin: 2px;
 }
 
